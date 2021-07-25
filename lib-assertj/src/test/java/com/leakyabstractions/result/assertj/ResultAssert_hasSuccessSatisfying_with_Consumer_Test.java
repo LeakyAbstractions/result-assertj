@@ -73,6 +73,6 @@ class ResultAssert_hasSuccessSatisfying_with_Consumer_Test {
         final ThrowingCallable callable = () -> assertThat(actual).hasSuccessSatisfying(consumer);
         // Then
         assertThatExceptionOfType(AssertionError.class).isThrownBy(callable)
-                .withMessage(format("%nexpected: \"something\"%nbut was : \"something else\""));
+                .withMessage(format("%nexpected: \"something\"%n but was: \"something else\""));
     }
 }

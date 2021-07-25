@@ -91,7 +91,8 @@ class ResultAssert_hasSuccessThat_with_InstanceOfAssertFactory_Test
         final ThrowingCallable callable = () -> assertThat(result).hasSuccessThat(factory);
         // Then
         final AssertionError assertionError = expectAssertionError(callable);
-        then(assertionError).hasMessageContainingAll("Expecting:", "to be an instance of:", "but was instance of:");
+        then(assertionError).hasMessageContainingAll(
+                "Expecting actual:", "to be an instance of:", "but was instance of:");
     }
 
     @Override

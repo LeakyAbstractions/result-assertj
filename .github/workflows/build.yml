@@ -13,8 +13,6 @@ on:
 
 env:
   GRADLE_OPTS: '-Dorg.gradle.daemon=false'
-  SONAR_HOST_URL: https://sonarcloud.io
-  SONAR_ORGANIZATION: leakyabstractions
 
 jobs:
   build:
@@ -97,7 +95,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: javadoc
-        path: lib/build/docs/javadoc/
+        path: lib-assertj/build/docs/javadoc/
 
     # ================================
     # TEST
@@ -112,21 +110,13 @@ jobs:
       run: ./gradlew jacocoTestReport jacocoTestCoverageVerification --info
 
     # ================================
-    # ANALYZE RESULT
-    # ================================
-    - name: Analyze Library RESULT
-      if: ${{ matrix.jdk == 16 }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_RESULT }}
-      run: ./gradlew :lib:sonarqube --info
-
-    # ================================
-    # ANALYZE RESULT-ASSERTJ
+    # ANALYZE
     # ================================
     - name: Analyze Library RESULT-ASSERTJ
       if: ${{ matrix.jdk == 16 }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_RESULT_ASSERTJ }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: https://sonarcloud.io
+        SONAR_ORGANIZATION: leakyabstractions
       run: ./gradlew :lib-assertj:sonarqube --info

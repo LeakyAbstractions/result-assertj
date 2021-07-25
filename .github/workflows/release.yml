@@ -97,7 +97,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: javadoc
-        path: lib/build/docs/javadoc/
+        path: lib-assertj/build/docs/javadoc/
 
     # ================================
     # PUBLISH JAVADOC
@@ -105,7 +105,7 @@ jobs:
     - name: Publish Javadoc to GitHub Pages
       shell: bash
       run: |
-        cp -r lib/build/docs/javadoc docs/javadoc/${GITHUB_REF#refs/tags/}
+        cp -r lib-assertj/build/docs/javadoc docs/javadoc/${GITHUB_REF#refs/tags/}
         git config user.name "Guillermo Calvo"
         git config user.email "guillermo@guillermo.dev"
         git add docs/javadoc/${GITHUB_REF#refs/tags/}

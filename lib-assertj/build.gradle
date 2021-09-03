@@ -12,24 +12,15 @@ repositories {
     mavenCentral()
 }
 
-apply from: rootProject.file('common/compile.gradle')
-apply from: rootProject.file('common/spotless.gradle')
-apply from: rootProject.file('common/test.gradle')
-apply from: rootProject.file('common/jacoco.gradle')
-apply from: rootProject.file('common/sonarqube.gradle')
-apply from: rootProject.file('common/javadoc.gradle')
-apply from: rootProject.file('common/publish.gradle')
+apply from: project.file('compile.gradle')
+apply from: project.file('spotless.gradle')
+apply from: project.file('test.gradle')
+apply from: project.file('jacoco.gradle')
+apply from: project.file('sonarqube.gradle')
+apply from: project.file('javadoc.gradle')
+apply from: project.file('publish.gradle')
 
 dependencies {
-    api 'com.leakyabstractions:result:0.3.0.3'
-    api 'org.assertj:assertj-core:3.20.2'
-}
-
-javadoc {
-    options {
-        linksOffline 'https://dev.leakyabstractions.com/result/javadoc/${rootProject.version}/',
-                rootProject.file('common/javadoc/result').toString()
-        linksOffline 'https://javadoc.io/doc/org.assertj/assertj-core/latest/',
-                rootProject.file('common/javadoc/assertj-core').toString()
-    }
+    api libs.result
+    api libs.assertj
 }

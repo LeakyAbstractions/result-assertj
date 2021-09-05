@@ -5,11 +5,13 @@ javadoc {
         header "${project.artifactName} ${rootProject.version}"
         author true
         if (JavaVersion.current() <= JavaVersion.VERSION_1_8) {
-            linksOffline 'https://docs.oracle.com/javase/8/docs/api/', rootProject.file('common/javadoc/jdk8').toString()
+            links 'https://docs.oracle.com/javase/8/docs/api/'
         } else {
-            linksOffline 'https://docs.oracle.com/en/java/javase/15/docs/api/', rootProject.file('common/javadoc/jdk15').toString()
+            links 'https://docs.oracle.com/en/java/javase/15/docs/api/'
             addBooleanOption('html5', true)
         }
+        links "https://dev.leakyabstractions.com/result/javadoc/${libs.result.version}/"
+        links "https://javadoc.io/doc/org.assertj/assertj-core/${libs.assertj.version}/"
     }
     configure(options) {
         tags(

@@ -635,7 +635,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         if (this.actual().isFailure()) {
             this.throwAssertionError(shouldBeSuccess(this.actual()));
         }
-        return this.actual().orElseThrow();
+        return this.actual().orElse(null);
     }
 
     private F assertIsFailure() {
@@ -643,7 +643,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         if (this.actual().isSuccess()) {
             this.throwAssertionError(shouldBeFailure(this.actual()));
         }
-        return this.actual().getFailureOrElseThrow();
+        return this.actual().optionalFailure().orElse(null);
     }
 
     // Class members annotated with "@VisibleForTesting" should not be accessed from production code

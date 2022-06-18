@@ -18,7 +18,7 @@ Adding it to your build should be very easy.
 Artifact coordinates:
 
 - Group ID: `com.leakyabstractions`
-- Artifact ID: `result`
+- Artifact ID: `result-assertj`
 - Version: `{{ site.current_version }}`
 
 To add the dependency using [**Maven**](https://maven.apache.org/), use the following:

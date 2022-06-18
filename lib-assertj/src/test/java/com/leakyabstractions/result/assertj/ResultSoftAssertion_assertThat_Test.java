@@ -28,8 +28,8 @@ class ResultSoftAssertion_assertThat_Test {
         final ResultSoftAssertions softly = new ResultSoftAssertions();
         // When
         softly.assertThat(result)
-                .isSuccess()
-                .isFailure();
+                .hasSuccess()
+                .hasFailure();
         final ThrowingCallable assertAll = () -> softly.assertAll();
         // Then
         final Throwable error = catchThrowable(assertAll);
@@ -43,7 +43,7 @@ class ResultSoftAssertion_assertThat_Test {
         final ResultSoftAssertions softly = new ResultSoftAssertions();
         // When
         softly.assertThat(result)
-                .isSuccess()
+                .hasSuccess()
                 .hasSuccess("hello");
         final ThrowingCallable assertAll = () -> softly.assertAll();
         // Then

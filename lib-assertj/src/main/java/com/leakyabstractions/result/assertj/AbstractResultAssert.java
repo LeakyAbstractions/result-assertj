@@ -48,8 +48,8 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      *
      * <pre class="row-color">
      * {@code
-     * assertThat(Results.success("yay")).isSuccess();
-     * assertThat(Results.success(123)).isSuccess();
+     * assertThat(Results.success("yay")).hasSuccess();
+     * assertThat(Results.success(123)).hasSuccess();
      * }
      * </pre>
      *
@@ -57,15 +57,15 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      *
      * <pre class="row-color">
      * {@code
-     * assertThat(Results.failure("nay")).isSuccess();
-     * assertThat(Results.failure(123)).isSuccess();
+     * assertThat(Results.failure("nay")).hasSuccess();
+     * assertThat(Results.failure(123)).hasSuccess();
      * }
      * </pre>
      *
      * @return this assertion object.
      */
-    public SELF isSuccess() {
-        this.assertIsSuccess();
+    public SELF hasSuccess() {
+        this.assertHasSuccess();
         return myself;
     }
 
@@ -94,7 +94,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasSuccess(S expectedValue) {
-        final S value = this.assertIsSuccess();
+        final S value = this.assertHasSuccess();
         this.checkNotNull(expectedValue);
         if (!StandardComparisonStrategy.instance().areEqual(value, expectedValue)) {
             throw Failures.instance().failure(this.info(), shouldHave(this.actual(), expectedValue, value), value,
@@ -139,7 +139,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasSuccessSameAs(S expectedValue) {
-        final S value = this.assertIsSuccess();
+        final S value = this.assertHasSuccess();
         this.checkNotNull(expectedValue);
         if (value != expectedValue) {
             this.throwAssertionError(shouldHaveSame(this.actual(), expectedValue, value));
@@ -183,7 +183,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasSuccessSatisfying(Consumer<S> requirement) {
-        final S value = this.assertIsSuccess();
+        final S value = this.assertHasSuccess();
         requirement.accept(value);
         return myself;
     }
@@ -223,7 +223,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasSuccessSatisfying(Condition<? super S> condition) {
-        final S value = this.assertIsSuccess();
+        final S value = this.assertHasSuccess();
         Conditions.instance().assertIs(this.info(), value, condition);
         return myself;
     }
@@ -256,7 +256,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasSuccessInstanceOf(Class<?> clazz) {
-        final S value = this.assertIsSuccess();
+        final S value = this.assertHasSuccess();
         this.checkNotNull(clazz);
         if (!clazz.isInstance(value)) {
             this.throwAssertionError(shouldHaveInstanceOf(this.actual(), clazz, value));
@@ -291,7 +291,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      */
     @CheckReturnValue
     public ObjectAssert<S> hasSuccessThat() {
-        final S value = this.assertIsSuccess();
+        final S value = this.assertHasSuccess();
         return assertWithAssertionState(myself, value);
     }
 
@@ -329,7 +329,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      */
     @CheckReturnValue
     public <T extends AbstractAssert<?, ?>> T hasSuccessThat(InstanceOfAssertFactory<?, T> assertFactory) {
-        final S value = this.assertIsSuccess();
+        final S value = this.assertHasSuccess();
         return assertWithAssertionState(myself, value).asInstanceOf(assertFactory);
     }
 
@@ -340,8 +340,8 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      *
      * <pre class="row-color">
      * {@code
-     * assertThat(Results.failure("yay")).isFailure();
-     * assertThat(Results.failure(123)).isFailure();
+     * assertThat(Results.failure("yay")).hasFailure();
+     * assertThat(Results.failure(123)).hasFailure();
      * }
      * </pre>
      *
@@ -349,15 +349,15 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      *
      * <pre class="row-color">
      * {@code
-     * assertThat(Results.success("nay")).isFailure();
-     * assertThat(Results.success(123)).isFailure();
+     * assertThat(Results.success("nay")).hasFailure();
+     * assertThat(Results.success(123)).hasFailure();
      * }
      * </pre>
      *
      * @return this assertion object.
      */
-    public SELF isFailure() {
-        this.assertIsFailure();
+    public SELF hasFailure() {
+        this.assertHasFailure();
         return myself;
     }
 
@@ -386,7 +386,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasFailure(F expectedValue) {
-        final F value = this.assertIsFailure();
+        final F value = this.assertHasFailure();
         this.checkNotNull(expectedValue);
         if (!StandardComparisonStrategy.instance().areEqual(value, expectedValue)) {
             throw Failures.instance().failure(this.info(), shouldHave(this.actual(), expectedValue, value), value,
@@ -432,7 +432,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasFailureSameAs(F expectedValue) {
-        final F value = this.assertIsFailure();
+        final F value = this.assertHasFailure();
         this.checkNotNull(expectedValue);
         if (value != expectedValue) {
             this.throwAssertionError(shouldHaveSame(this.actual(), expectedValue, value));
@@ -476,7 +476,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasFailureSatisfying(Consumer<F> requirement) {
-        final F value = this.assertIsFailure();
+        final F value = this.assertHasFailure();
         requirement.accept(value);
         return myself;
     }
@@ -516,7 +516,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasFailureSatisfying(Condition<? super F> condition) {
-        final F value = this.assertIsFailure();
+        final F value = this.assertHasFailure();
         Conditions.instance().assertIs(this.info(), value, condition);
         return myself;
     }
@@ -549,7 +549,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return this assertion object.
      */
     public SELF hasFailureInstanceOf(Class<?> clazz) {
-        final F value = this.assertIsFailure();
+        final F value = this.assertHasFailure();
         this.checkNotNull(clazz);
         if (!clazz.isInstance(value)) {
             this.throwAssertionError(shouldHaveInstanceOf(this.actual(), clazz, value));
@@ -584,7 +584,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      */
     @CheckReturnValue
     public ObjectAssert<F> hasFailureThat() {
-        final F value = this.assertIsFailure();
+        final F value = this.assertHasFailure();
         return assertWithAssertionState(myself, value);
     }
 
@@ -622,7 +622,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      */
     @CheckReturnValue
     public <T extends AbstractAssert<?, ?>> T hasFailureThat(InstanceOfAssertFactory<?, T> assertFactory) {
-        final F value = this.assertIsFailure();
+        final F value = this.assertHasFailure();
         return assertWithAssertionState(myself, value).asInstanceOf(assertFactory);
     }
 
@@ -630,20 +630,20 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         checkArgument(expectedValue != null, "The expected value should not be <null>.");
     }
 
-    private S assertIsSuccess() {
+    private S assertHasSuccess() {
         isNotNull();
-        if (this.actual().isFailure()) {
+        if (this.actual().hasFailure()) {
             this.throwAssertionError(shouldBeSuccess(this.actual()));
         }
-        return this.actual().orElse(null);
+        return this.actual().getSuccess();
     }
 
-    private F assertIsFailure() {
+    private F assertHasFailure() {
         isNotNull();
-        if (this.actual().isSuccess()) {
+        if (this.actual().hasSuccess()) {
             this.throwAssertionError(shouldBeFailure(this.actual()));
         }
-        return this.actual().optionalFailure().orElse(null);
+        return this.actual().getFailure();
     }
 
     // Class members annotated with "@VisibleForTesting" should not be accessed from production code

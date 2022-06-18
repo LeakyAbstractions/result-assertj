@@ -44,6 +44,6 @@ ext.libs = [
     'assertj': [
         'group': 'org.assertj',
         'name': 'assertj-core',
-        'version': '3.20.2'
+        'version': '3.23.1'
     ]
 ]

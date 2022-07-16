@@ -632,18 +632,14 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
 
     private S assertHasSuccess() {
         isNotNull();
-        if (this.actual().hasFailure()) {
-            this.throwAssertionError(shouldBeSuccess(this.actual()));
-        }
-        return this.actual().getSuccess();
+        return this.actual().getSuccess()
+                .orElseThrow(() -> this.assertionError(shouldBeSuccess(this.actual())));
     }
 
     private F assertHasFailure() {
         isNotNull();
-        if (this.actual().hasSuccess()) {
-            this.throwAssertionError(shouldBeFailure(this.actual()));
-        }
-        return this.actual().getFailure();
+        return this.actual().getFailure()
+                .orElseThrow(() -> this.assertionError(shouldBeFailure(this.actual())));
     }
 
     // Class members annotated with "@VisibleForTesting" should not be accessed from production code

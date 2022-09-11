@@ -3,7 +3,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=LeakyAbstractions_result-assertj&metric=alert_status)](https://sonarcloud.io/dashboard?id=LeakyAbstractions_result-assertj)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=LeakyAbstractions_result-assertj&metric=coverage)](https://sonarcloud.io/component_measures?id=LeakyAbstractions_result-assertj&metric=coverage&view=list)
 [![Maven Central](https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-assertj/badge.json&logo=java&label=maven-central&labelColor=555)](https://search.maven.org/artifact/com.leakyabstractions/result-assertj)
-[![Latest Release](https://img.shields.io/github/release/leakyabstractions/result.svg?logo=github)](https://github.com/leakyabstractions/result-assertj/releases/latest)
+[![Latest Release](https://img.shields.io/github/release/leakyabstractions/result-assertj.svg?logo=github)](https://github.com/leakyabstractions/result-assertj/releases/latest)
 [![Javadoc](https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-assertj/badge.json&label=javadoc&color=blue)](https://dev.leakyabstractions.com/result-assertj/javadoc/)
 
 # Fluent Assertions for Result Objects

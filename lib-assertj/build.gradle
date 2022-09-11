@@ -21,6 +21,6 @@ apply from: project.file('javadoc.gradle')
 apply from: project.file('publish.gradle')
 
 dependencies {
-    api libs.result
-    api libs.assertj
+    implementation libs.result
+    implementation libs.assertj
 }

@@ -22,5 +22,5 @@ apply from: project.file('publish.gradle')
 
 dependencies {
     implementation libs.result
-    implementation libs.assertj
+    implementation libs.assertj.core
 }

@@ -10,13 +10,11 @@ import static com.leakyabstractions.result.assertj.ResultShouldHave.shouldHave;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 import static org.assertj.core.api.Assertions.catchThrowable;
-import static org.assertj.core.api.Assertions.catchThrowableOfType;
 import static org.assertj.core.util.FailureMessages.actualIsNull;
 
 import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.opentest4j.AssertionFailedError;
 
 import com.leakyabstractions.result.Result;
 
@@ -48,7 +46,8 @@ class ResultAssert_hasFailure_with_Object_Test {
         // When
         final ThrowingCallable callable = () -> assertThat(result).hasFailure(expected);
         // Then
-        assertThatIllegalArgumentException().isThrownBy(callable)
+        assertThatIllegalArgumentException()
+                .isThrownBy(callable)
                 .withMessage("The expected value should not be <null>.");
     }
 
@@ -73,10 +72,8 @@ class ResultAssert_hasFailure_with_Object_Test {
         // When
         final ThrowingCallable callable = () -> assertThat(result).hasFailure(expected);
         // Then
-        final AssertionFailedError error = catchThrowableOfType(callable, AssertionFailedError.class);
+        final Throwable error = catchThrowable(callable);
         assertThat(error).hasMessage(shouldHave(result, expected, actual).create());
-        assertThat(error.getActual().getStringRepresentation()).isEqualTo(actual);
-        assertThat(error.getExpected().getStringRepresentation()).isEqualTo(expected);
     }
 
     @Test

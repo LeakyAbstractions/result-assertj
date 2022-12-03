@@ -47,7 +47,8 @@ class ResultAssert_hasFailureSameAs_Test {
         // When
         final ThrowingCallable callable = () -> assertThat(result).hasFailureSameAs(expected);
         // Then
-        assertThatIllegalArgumentException().isThrownBy(callable)
+        assertThatIllegalArgumentException()
+                .isThrownBy(callable)
                 .withMessage("The expected value should not be <null>.");
     }
 

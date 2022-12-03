@@ -67,7 +67,8 @@ class ResultAssert_hasFailureThat_with_InstanceOfAssertFactory_Test
         final ThrowingCallable callable = () -> assertThat(result).hasFailureThat(factory);
         // Then
         final Throwable thrown = catchThrowable(callable);
-        then(thrown).isInstanceOf(NullPointerException.class)
+        then(thrown)
+                .isInstanceOf(NullPointerException.class)
                 .hasMessage(shouldNotBeNull("instanceOfAssertFactory").create());
     }
 
@@ -91,8 +92,9 @@ class ResultAssert_hasFailureThat_with_InstanceOfAssertFactory_Test
         final ThrowingCallable callable = () -> assertThat(result).hasFailureThat(factory);
         // Then
         final AssertionError assertionError = expectAssertionError(callable);
-        then(assertionError).hasMessageContainingAll(
-                "Expecting actual:", "to be an instance of:", "but was instance of:");
+        then(assertionError)
+                .hasMessageContainingAll(
+                        "Expecting actual:", "to be an instance of:", "but was instance of:");
     }
 
     @Override
@@ -105,5 +107,4 @@ class ResultAssert_hasFailureThat_with_InstanceOfAssertFactory_Test
     public AbstractAssert<?, ?> invoke_navigation_method(ResultAssert<Integer, String> assertion) {
         return assertion.hasFailureThat(STRING);
     }
-
 }

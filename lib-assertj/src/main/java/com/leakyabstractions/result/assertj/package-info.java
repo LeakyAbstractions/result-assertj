@@ -9,9 +9,9 @@
  * <p>
  * To quickly start using Result assertions, follow these steps:
  * <ol>
- * <li>Statically import {@code com.leakyabstractions.result.assertj.ResultAssertions.assertThat}.</li>
- * <li>Pass the result under test as the sole {@code assertThat} parameter.</li>
- * <li>Use code completion to discover assertions.</li>
+ * <li>Statically import {@code com.leakyabstractions.result.assertj.ResultAssertions.assertThat}.
+ * <li>Pass the result under test as the sole {@code assertThat} parameter.
+ * <li>Use code completion to discover assertions.
  * </ol>
  * <h3>Statically import {@code assertThat}</h3>
  *

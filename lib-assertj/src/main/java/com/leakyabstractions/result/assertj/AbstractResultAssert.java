@@ -34,7 +34,6 @@ import org.assertj.core.api.ObjectAssert;
 import org.assertj.core.api.ObjectAssertProxy;
 import org.assertj.core.api.WritableAssertionInfo;
 import org.assertj.core.internal.Conditions;
-import org.assertj.core.internal.Failures;
 import org.assertj.core.internal.StandardComparisonStrategy;
 import org.assertj.core.util.CheckReturnValue;
 
@@ -112,8 +111,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         final S value = this.assertHasSuccess();
         this.checkNotNull(expectedValue);
         if (!StandardComparisonStrategy.instance().areEqual(value, expectedValue)) {
-            throw Failures.instance().failure(this.info(), shouldHave(this.actual(), expectedValue, value), value,
-                    expectedValue);
+            throw this.assertionError(shouldHave(this.actual(), expectedValue, value));
         }
         return myself;
     }
@@ -404,8 +402,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         final F value = this.assertHasFailure();
         this.checkNotNull(expectedValue);
         if (!StandardComparisonStrategy.instance().areEqual(value, expectedValue)) {
-            throw Failures.instance().failure(this.info(), shouldHave(this.actual(), expectedValue, value), value,
-                    expectedValue);
+            throw this.assertionError(shouldHave(this.actual(), expectedValue, value));
         }
         return myself;
     }

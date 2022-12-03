@@ -30,7 +30,8 @@ class ResultAssert_hasFailure_Test {
         // When
         final ThrowingCallable callable = () -> assertThat(result).hasFailure();
         // Then
-        assertThatExceptionOfType(AssertionError.class).isThrownBy(callable)
+        assertThatExceptionOfType(AssertionError.class)
+                .isThrownBy(callable)
                 .withMessage(actualIsNull());
     }
 
@@ -41,7 +42,8 @@ class ResultAssert_hasFailure_Test {
         // When
         final ThrowingCallable callable = () -> assertThat(result).hasFailure();
         // Then
-        assertThatExceptionOfType(AssertionError.class).isThrownBy(callable)
+        assertThatExceptionOfType(AssertionError.class)
+                .isThrownBy(callable)
                 .withMessage(shouldBeFailure(result).create());
     }
 

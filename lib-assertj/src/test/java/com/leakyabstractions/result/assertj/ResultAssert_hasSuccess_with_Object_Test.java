@@ -46,7 +46,8 @@ class ResultAssert_hasSuccess_with_Object_Test {
         // When
         final ThrowingCallable callable = () -> assertThat(result).hasSuccess(expected);
         // Then
-        assertThatIllegalArgumentException().isThrownBy(callable)
+        assertThatIllegalArgumentException()
+                .isThrownBy(callable)
                 .withMessage("The expected value should not be <null>.");
     }
 

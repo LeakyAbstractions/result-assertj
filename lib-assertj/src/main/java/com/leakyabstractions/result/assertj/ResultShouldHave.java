@@ -35,19 +35,23 @@ class ResultShouldHave extends BasicErrorMessageFactory {
         super(message, result, argument);
     }
 
-    private ResultShouldHave(String message, Result<?, ?> result, Object argument1, Object argument2) {
+    private ResultShouldHave(
+            String message, Result<?, ?> result, Object argument1, Object argument2) {
         super(message, result, argument1, argument2);
     }
 
-    static ResultShouldHave shouldHave(Result<?, ?> result, Object expectedValue, Object actualValue) {
+    static ResultShouldHave shouldHave(
+            Result<?, ?> result, Object expectedValue, Object actualValue) {
         return new ResultShouldHave(EXPECTING_VALUE_BUT_DIFFERENT, result, expectedValue, actualValue);
     }
 
-    static ResultShouldHave shouldHaveSame(Result<?, ?> result, Object expectedValue, Object actualValue) {
+    static ResultShouldHave shouldHaveSame(
+            Result<?, ?> result, Object expectedValue, Object actualValue) {
         return new ResultShouldHave(EXPECTING_EXACT_BUT_DIFFERENT, result, expectedValue);
     }
 
     static ResultShouldHave shouldHaveInstanceOf(Result<?, ?> result, Class<?> clazz, Object value) {
-        return new ResultShouldHave(EXPECTING_CLASS_BUT_DIFFERENT, result, clazz.getName(), value.getClass().getName());
+        return new ResultShouldHave(
+                EXPECTING_CLASS_BUT_DIFFERENT, result, clazz.getName(), value.getClass().getName());
     }
 }

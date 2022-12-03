@@ -124,9 +124,9 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      *
      * <pre class="row-color">
      * {@code
-     *     static {
-     *         final String FOOBAR = "foobar";
-     *     }
+     * static {
+     *     final String FOOBAR = "foobar";
+     * }
      * }
      * </pre>
      *
@@ -209,9 +209,9 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      *
      * <pre class="row-color">
      * {@code
-     *     static {
-     *         final Condition<Integer> IS_NEGATIVE = new Condition<>(i -> i < 0, "a negative number");
-     *     }
+     * static {
+     *     final Condition<Integer> IS_NEGATIVE = new Condition<>(i -> i < 0, "a negative number");
+     * }
      * }
      * </pre>
      *
@@ -341,7 +341,8 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return a new narrowed {@link ObjectAssertProxy} instance for assertions chaining on the success value
      */
     @CheckReturnValue
-    public <T extends AbstractAssert<?, ?>> T hasSuccessThat(InstanceOfAssertFactory<?, T> assertFactory) {
+    public <T extends AbstractAssert<?, ?>> T hasSuccessThat(
+            InstanceOfAssertFactory<?, T> assertFactory) {
         final S value = this.assertHasSuccess();
         return assertWithAssertionState(myself, value).asInstanceOf(assertFactory);
     }
@@ -415,9 +416,9 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      *
      * <pre class="row-color">
      * {@code
-     *     static {
-     *         final String FOOBAR = "foobar";
-     *     }
+     * static {
+     *     final String FOOBAR = "foobar";
+     * }
      * }
      * </pre>
      *
@@ -501,9 +502,9 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      *
      * <pre class="row-color">
      * {@code
-     *     static {
-     *         final Condition<Integer> IS_NEGATIVE = new Condition<>(i -> i < 0, "a negative number");
-     *     }
+     * static {
+     *     final Condition<Integer> IS_NEGATIVE = new Condition<>(i -> i < 0, "a negative number");
+     * }
      * }
      * </pre>
      *
@@ -633,7 +634,8 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      * @return a new narrowed {@link ObjectAssertProxy} instance for assertions chaining on the success value
      */
     @CheckReturnValue
-    public <T extends AbstractAssert<?, ?>> T hasFailureThat(InstanceOfAssertFactory<?, T> assertFactory) {
+    public <T extends AbstractAssert<?, ?>> T hasFailureThat(
+            InstanceOfAssertFactory<?, T> assertFactory) {
         final F value = this.assertHasFailure();
         return assertWithAssertionState(myself, value).asInstanceOf(assertFactory);
     }
@@ -644,13 +646,15 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
 
     private S assertHasSuccess() {
         isNotNull();
-        return this.actual().getSuccess()
+        return this.actual()
+                .getSuccess()
                 .orElseThrow(() -> this.assertionError(shouldBeSuccess(this.actual())));
     }
 
     private F assertHasFailure() {
         isNotNull();
-        return this.actual().getFailure()
+        return this.actual()
+                .getFailure()
                 .orElseThrow(() -> this.assertionError(shouldBeFailure(this.actual())));
     }
 

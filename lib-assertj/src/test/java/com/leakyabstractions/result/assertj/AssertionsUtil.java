@@ -78,14 +78,16 @@ class AssertionsUtil {
         @Test
         default void should_keep_existing_assertion_state() {
             // Given
-            ASSERT assertion = getAssertion().as("description")
+            ASSERT assertion = getAssertion()
+                    .as("description")
                     .withFailMessage("error message")
                     .withRepresentation(UNICODE_REPRESENTATION)
                     .usingComparator(AlwaysEqualComparator.INSTANCE);
             // When
             AbstractAssert<?, ?> result = invoke_navigation_method(assertion);
             // Then
-            then(result).hasFieldOrPropertyWithValue("objects", EXTRACTION.getValueOf("objects", assertion))
+            then(result)
+                    .hasFieldOrPropertyWithValue("objects", EXTRACTION.getValueOf("objects", assertion))
                     .extracting(AbstractAssert::getWritableAssertionInfo)
                     .usingRecursiveComparison()
                     .isEqualTo(assertion.info);

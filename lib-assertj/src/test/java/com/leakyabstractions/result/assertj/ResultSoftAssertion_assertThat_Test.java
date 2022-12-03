@@ -27,9 +27,7 @@ class ResultSoftAssertion_assertThat_Test {
         final Result<String, Integer> result = success("hello");
         final ResultSoftAssertions softly = new ResultSoftAssertions();
         // When
-        softly.assertThat(result)
-                .hasSuccess()
-                .hasFailure();
+        softly.assertThat(result).hasSuccess().hasFailure();
         final ThrowingCallable assertAll = () -> softly.assertAll();
         // Then
         final Throwable error = catchThrowable(assertAll);
@@ -42,9 +40,7 @@ class ResultSoftAssertion_assertThat_Test {
         final Result<String, Integer> result = success("hello");
         final ResultSoftAssertions softly = new ResultSoftAssertions();
         // When
-        softly.assertThat(result)
-                .hasSuccess()
-                .hasSuccess("hello");
+        softly.assertThat(result).hasSuccess().hasSuccess("hello");
         final ThrowingCallable assertAll = () -> softly.assertAll();
         // Then
         assertThatCode(assertAll).doesNotThrowAnyException();

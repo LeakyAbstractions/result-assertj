@@ -24,7 +24,8 @@ import com.leakyabstractions.result.assertj.AssertionsUtil.NavigationMethodBaseT
  * @author Guillermo Calvo
  */
 @DisplayName("ResultAssert hasFailureThat")
-class ResultAssert_hasFailureThat_Test implements NavigationMethodBaseTest<ResultAssert<Integer, String>> {
+class ResultAssert_hasFailureThat_Test
+        implements NavigationMethodBaseTest<ResultAssert<Integer, String>> {
 
     @Test
     void should_fail_if_result_is_null() {
@@ -66,5 +67,4 @@ class ResultAssert_hasFailureThat_Test implements NavigationMethodBaseTest<Resul
     public AbstractAssert<?, ?> invoke_navigation_method(ResultAssert<Integer, String> assertion) {
         return assertion.hasFailureThat();
     }
-
 }

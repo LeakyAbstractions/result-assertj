@@ -34,7 +34,8 @@ class ResultAssert_hasSuccessInstanceOf_Test {
         // When
         final ThrowingCallable callable = () -> assertThat(result).hasSuccessInstanceOf(expectedClass);
         // Then
-        assertThatIllegalArgumentException().isThrownBy(callable)
+        assertThatIllegalArgumentException()
+                .isThrownBy(callable)
                 .withMessage("The expected value should not be <null>.");
     }
 

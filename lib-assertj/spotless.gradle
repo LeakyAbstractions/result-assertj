@@ -1,6 +1,7 @@
 // Configure source code formatting
 spotless {
     java {
+        googleJavaFormat(libs.versions.google.java.format.get())
         eclipse().configFile rootProject.file('.formatting.xml')
         importOrderFile rootProject.file('.importorder')
         removeUnusedImports()

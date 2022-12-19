@@ -155,7 +155,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         final S value = this.assertHasSuccess();
         this.checkNotNull(expectedValue);
         if (value != expectedValue) {
-            this.throwAssertionError(shouldHaveSame(this.actual(), expectedValue, value));
+            this.throwAssertionError(shouldHaveSame(this.actual(), expectedValue));
         }
         return myself;
     }
@@ -448,7 +448,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         final F value = this.assertHasFailure();
         this.checkNotNull(expectedValue);
         if (value != expectedValue) {
-            this.throwAssertionError(shouldHaveSame(this.actual(), expectedValue, value));
+            this.throwAssertionError(shouldHaveSame(this.actual(), expectedValue));
         }
         return myself;
     }

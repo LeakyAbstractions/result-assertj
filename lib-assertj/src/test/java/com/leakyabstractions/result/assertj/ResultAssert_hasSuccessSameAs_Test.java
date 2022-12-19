@@ -75,7 +75,7 @@ class ResultAssert_hasSuccessSameAs_Test {
         // Then
         assertThatExceptionOfType(AssertionError.class)
                 .isThrownBy(callable)
-                .withMessage(shouldHaveSame(result, expected, actual).create());
+                .withMessage(shouldHaveSame(result, expected).create());
     }
 
     @Test
@@ -89,7 +89,7 @@ class ResultAssert_hasSuccessSameAs_Test {
         // Then
         assertThatExceptionOfType(AssertionError.class)
                 .isThrownBy(callable)
-                .withMessage(shouldHaveSame(result, expected, actual).create());
+                .withMessage(shouldHaveSame(result, expected).create());
     }
 
     @Test

@@ -45,8 +45,7 @@ class ResultShouldHave extends BasicErrorMessageFactory {
         return new ResultShouldHave(EXPECTING_VALUE_BUT_DIFFERENT, result, expectedValue, actualValue);
     }
 
-    static ResultShouldHave shouldHaveSame(
-            Result<?, ?> result, Object expectedValue, Object actualValue) {
+    static ResultShouldHave shouldHaveSame(Result<?, ?> result, Object expectedValue) {
         return new ResultShouldHave(EXPECTING_EXACT_BUT_DIFFERENT, result, expectedValue);
     }
 

@@ -155,7 +155,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         final S value = this.assertHasSuccess();
         this.checkNotNull(expectedValue);
         if (value != expectedValue) {
-            this.throwAssertionError(shouldHaveSame(this.actual(), expectedValue, value));
+            throw assertionError(shouldHaveSame(this.actual(), expectedValue));
         }
         return myself;
     }
@@ -272,7 +272,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         final S value = this.assertHasSuccess();
         this.checkNotNull(clazz);
         if (!clazz.isInstance(value)) {
-            this.throwAssertionError(shouldHaveInstanceOf(this.actual(), clazz, value));
+            throw assertionError(shouldHaveInstanceOf(this.actual(), clazz, value));
         }
         return myself;
     }
@@ -448,7 +448,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         final F value = this.assertHasFailure();
         this.checkNotNull(expectedValue);
         if (value != expectedValue) {
-            this.throwAssertionError(shouldHaveSame(this.actual(), expectedValue, value));
+            throw assertionError(shouldHaveSame(this.actual(), expectedValue));
         }
         return myself;
     }
@@ -565,7 +565,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         final F value = this.assertHasFailure();
         this.checkNotNull(clazz);
         if (!clazz.isInstance(value)) {
-            this.throwAssertionError(shouldHaveInstanceOf(this.actual(), clazz, value));
+            throw assertionError(shouldHaveInstanceOf(this.actual(), clazz, value));
         }
         return myself;
     }

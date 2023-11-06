@@ -37,7 +37,7 @@ import org.assertj.core.internal.Conditions;
 import org.assertj.core.internal.StandardComparisonStrategy;
 import org.assertj.core.util.CheckReturnValue;
 
-import com.leakyabstractions.result.Result;
+import com.leakyabstractions.result.api.Result;
 
 /**
  * Assertions for {@link Result}.

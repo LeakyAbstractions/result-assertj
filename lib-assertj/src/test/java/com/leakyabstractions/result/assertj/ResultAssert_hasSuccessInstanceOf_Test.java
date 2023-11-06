@@ -1,12 +1,12 @@
 
 package com.leakyabstractions.result.assertj;
 
-import static com.leakyabstractions.result.Results.failure;
-import static com.leakyabstractions.result.Results.success;
 import static com.leakyabstractions.result.assertj.AssertionsUtil.expectAssertionError;
 import static com.leakyabstractions.result.assertj.ResultAssertions.assertThat;
 import static com.leakyabstractions.result.assertj.ResultShouldBe.shouldBeSuccess;
 import static com.leakyabstractions.result.assertj.ResultShouldHave.shouldHaveInstanceOf;
+import static com.leakyabstractions.result.core.Results.failure;
+import static com.leakyabstractions.result.core.Results.success;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 import static org.assertj.core.api.BDDAssertions.then;
@@ -15,7 +15,7 @@ import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.leakyabstractions.result.Result;
+import com.leakyabstractions.result.api.Result;
 
 /**
  * Tests for {@link ResultAssert#hasSuccessInstanceOf(Class)}.

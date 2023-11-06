@@ -1,8 +1,8 @@
 
 package com.leakyabstractions.result.assertj;
 
-import static com.leakyabstractions.result.Results.success;
 import static com.leakyabstractions.result.assertj.ResultShouldBe.shouldBeFailure;
+import static com.leakyabstractions.result.core.Results.success;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.catchThrowable;
@@ -11,7 +11,7 @@ import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.leakyabstractions.result.Result;
+import com.leakyabstractions.result.api.Result;
 
 /**
  * Tests for {@link ResultSoftAssertion#assertThat()}.

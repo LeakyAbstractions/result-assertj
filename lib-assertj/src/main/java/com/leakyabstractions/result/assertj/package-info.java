@@ -1,5 +1,5 @@
 /**
- * Provides assertions for {@link com.leakyabstractions.result.Result} type.
+ * Provides assertions for {@link com.leakyabstractions.result.api.Result} type.
  * <h2>AssertJ assertions for {@code Result}</h2>
  * <p>
  * If you think some assertion is missing, please <a href="https://github.com/LeakyAbstractions/result/issues">create an
@@ -31,8 +31,9 @@
  *
  * <h3>Use code completion to discover assertions</h3>
  * <p>
- * Use your preferred IDE code completion after {@link ResultAssertions#assertThat(com.leakyabstractions.result.Result)
- * assertThat} to discover and call assertions.
+ * Use your preferred IDE code completion after
+ * {@link ResultAssertions#assertThat(com.leakyabstractions.result.api.Result) assertThat} to discover and call
+ * assertions.
  *
  * <pre class="row-color">
  *
@@ -51,7 +52,7 @@
  *
  * @author Guillermo Calvo
  * @see ResultAssertions
- * @see com.leakyabstractions.result.Result
+ * @see com.leakyabstractions.result.api.Result
  */
 
 package com.leakyabstractions.result.assertj;

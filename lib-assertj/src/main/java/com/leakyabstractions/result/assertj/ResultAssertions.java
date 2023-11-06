@@ -18,7 +18,7 @@ package com.leakyabstractions.result.assertj;
 
 import org.assertj.core.api.Assertions;
 
-import com.leakyabstractions.result.Result;
+import com.leakyabstractions.result.api.Result;
 
 /**
  * Entry point for {@link Result} assertions and AssertJ ones.

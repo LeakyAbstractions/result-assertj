@@ -11,9 +11,6 @@ This library provides fluent assertions (based on [AssertJ][ASSERTJ]) to test [R
 
 ## Adding Assertions to Your Build
 
-The library requires JDK 1.8 or higher. Other than that, it has no external dependencies and it is very lightweight.
-Adding it to your build should be very easy.
-
 Artifact coordinates:
 
 - Group ID: `com.leakyabstractions`

@@ -1,7 +1,6 @@
 [versions]
 assertj = "3.24.2"
 google-java-format = "1.15.0"
-google-java-format-jdk8 = "1.7"
 jacoco = "0.8.10"
 junit = "5.9.3"
 nexus-publish = "1.1.0"

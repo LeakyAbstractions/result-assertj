@@ -18,7 +18,7 @@ package com.leakyabstractions.result.assertj;
 
 import org.assertj.core.api.SoftAssertions;
 
-import com.leakyabstractions.result.Result;
+import com.leakyabstractions.result.api.Result;
 
 /**
  * Soft assertions for {@link Result}.

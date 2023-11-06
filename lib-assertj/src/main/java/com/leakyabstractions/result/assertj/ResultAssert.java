@@ -16,7 +16,7 @@
 
 package com.leakyabstractions.result.assertj;
 
-import com.leakyabstractions.result.Result;
+import com.leakyabstractions.result.api.Result;
 
 /**
  * Assertions for {@link Result}.

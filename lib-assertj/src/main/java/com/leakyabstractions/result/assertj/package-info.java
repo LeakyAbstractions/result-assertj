@@ -1,5 +1,5 @@
 /**
- * Provides assertions for {@link com.leakyabstractions.result.Result} type.
+ * Provides assertions for {@link com.leakyabstractions.result.api.Result} type.
  * <h2>AssertJ assertions for {@code Result}</h2>
  * <p>
  * If you think some assertion is missing, please <a href="https://github.com/LeakyAbstractions/result/issues">create an
@@ -15,43 +15,44 @@
  * </ol>
  * <h3>Statically import {@code assertThat}</h3>
  *
- * <pre class="row-color">
- * {@code
+ * <pre class="row-color rowColor">
+ * <code>&nbsp;
  * import static com.leakyabstractions.result.assertj.ResultAssertions.assertThat;
- * }
+ * </code>
  * </pre>
  *
  * <h3>Pass the result under test as the sole {@code assertThat} parameter</h3>
  *
- * <pre class="row-color">
- * {@code
+ * <pre class="row-color rowColor">
+ * <code>&nbsp;
  * assertThat(result)
- * }
+ * </code>
  * </pre>
  *
  * <h3>Use code completion to discover assertions</h3>
  * <p>
- * Use your preferred IDE code completion after {@link ResultAssertions#assertThat(com.leakyabstractions.result.Result)
- * assertThat} to discover and call assertions.
+ * Use your preferred IDE code completion after
+ * {@link ResultAssertions#assertThat(com.leakyabstractions.result.api.Result) assertThat} to discover and call
+ * assertions.
  *
- * <pre class="row-color">
- *
- *     {@literal @Test}{@code
- *     public void should_pass() {
- *         // Given
- *         final int number = someMethodReturningInt();
- *         // When
- *         final Result<String, Integer> result = someMethodReturningResult(number);
- *         // Then
- *         assertThat(number).isZero();
- *         assertThat(result).hasSuccess("OK");
- *     }
+ * <pre class="row-color rowColor">
+ * <code>&nbsp;
+ * &amp;Test
+ * public void should_pass() {
+ *     // Given
+ *     final int number = someMethodReturningInt();
+ *     // When
+ *     final Result&lt;String, Integer&gt; result = someMethodReturningResult(number);
+ *     // Then
+ *     assertThat(number).isZero();
+ *     assertThat(result).hasSuccess("OK");
  * }
+ * </code>
  * </pre>
  *
  * @author Guillermo Calvo
  * @see ResultAssertions
- * @see com.leakyabstractions.result.Result
+ * @see com.leakyabstractions.result.api.Result
  */
 
 package com.leakyabstractions.result.assertj;

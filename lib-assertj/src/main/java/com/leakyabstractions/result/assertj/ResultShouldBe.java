@@ -18,7 +18,7 @@ package com.leakyabstractions.result.assertj;
 
 import org.assertj.core.error.BasicErrorMessageFactory;
 
-import com.leakyabstractions.result.Result;
+import com.leakyabstractions.result.api.Result;
 
 /**
  * Build error message when a {@link Result} should be a success or a failure.

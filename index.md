@@ -6,7 +6,7 @@ image: https://dev.leakyabstractions.com/result/result-magic-ball.png
 
 # Result Assertions
 
-This library provides fluent assertions (based on [AssertJ][ASSERTJ]) to test [Result objects][RESULT].
+This library provides [fluent assertions][ASSERTJ] to test [Result objects][RESULT].
 
 
 ## Adding Assertions to Your Build
@@ -17,24 +17,8 @@ Artifact coordinates:
 - Artifact ID: `result-assertj`
 - Version: `{{ site.current_version }}`
 
-To add the dependency using [**Maven**][MAVEN], use the following:
-
-```xml
-<dependency>
-    <groupId>com.leakyabstractions</groupId>
-    <artifactId>result-assertj</artifactId>
-    <version>{{ site.current_version }}</version>
-    <scope>test</scope>
-</dependency>
-```
-
-To add the dependency using [**Gradle**][GRADLE]:
-
-```gradle
-dependencies {
-    testImplementation 'com.leakyabstractions:result-assertj:{{ site.current_version }}'
-}
-```
+[Maven Central Repository](https://central.sonatype.com/artifact/com.leakyabstractions/result-lazy/{{ site.current_version }})
+provides snippets for different build tools to declare this dependency.
 
 
 ## Asserting Result objects
@@ -42,37 +26,14 @@ dependencies {
 You can use _Result_ assertions in your tests via [`assertThat`][ASSERT_THAT]:
 
 ```java
-import static com.leakyabstractions.result.assertj.ResultAssertions.assertThat;
-
-@Test
-public void should_pass() {
-    // Given
-    final int number = someMethodReturningInt();
-    // When
-    final Result<String, Integer> result = someMethodReturningResult(number);
-    // Then
-    assertThat(number).isZero();
-    assertThat(result).hasSuccess("OK");
-}
+{% include_relative lib-assertj/src/test/java/example/Example1_Test.java %}
 ```
 
 If, for some reason, you cannot statically import static method [`ResultAssertions.assertThat()`][ASSERT_THAT] you can
 use static method [`assertThatResult`][ASSERT_THAT_RESULT] instead:
 
 ```java
-import static com.leakyabstractions.result.assertj.ResultAssert.assertThatResult;
-import static org.assertj.core.api.Assertions.assertThat;
-
-@Test
-public void should_pass_too() {
-    // Given
-    final int number = anotherMethodReturningInt();
-    // When
-    final Result<String, Integer> result = anotherMethodReturningResult(number);
-    // Then
-    assertThat(number).isOne();
-    assertThatResult(result).hasFailure(1);
-}
+{% include_relative lib-assertj/src/test/java/example/Example2_Test.java %}
 ```
 
 
@@ -149,8 +110,8 @@ See the License for the specific language governing permissions and limitations 
 
 [ARTIFACTS]:                    https://search.maven.org/artifact/com.leakyabstractions/result-assertj/
 [ASSERTJ]:                      https://assertj.github.io/doc/
-[ASSERT_THAT]:                  https://dev.leakyabstractions.com/result-assertj/javadoc/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssertions.html#assertThat-com.leakyabstractions.result.Result-
-[ASSERT_THAT_RESULT]:           https://dev.leakyabstractions.com/result-assertj/javadoc/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssert.html#assertThatResult-com.leakyabstractions.result.Result-
+[ASSERT_THAT]:                  https://javadoc.io/static/com.leakyabstractions/result-assertj/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssertions.html#assertThat-com.leakyabstractions.result.api.Result-
+[ASSERT_THAT_RESULT]:           https://javadoc.io/static/com.leakyabstractions/result-assertj/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssert.html#assertThatResult-com.leakyabstractions.result.api.Result-
 [AUTHOR]:                       https://github.com/guillermocalvo/
 [CODE_OF_CONDUCT]:              https://dev.leakyabstractions.com/result/CODE_OF_CONDUCT.html
 [CONTRIBUTING]:                 https://dev.leakyabstractions.com/result/CONTRIBUTING.html

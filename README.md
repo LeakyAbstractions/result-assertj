@@ -100,7 +100,7 @@ See the License for the specific language governing permissions and limitations 
 [CONTRIBUTING]:                 https://dev.leakyabstractions.com/result/CONTRIBUTING.html
 [GUILLERMO]:                    https://guillermo.dev/
 [GUILLERMO_IMAGE]:              https://guillermo.dev/assets/images/thumb.png
-[JAVADOC]:                      https://dev.leakyabstractions.com/result-assertj/javadoc/
+[JAVADOC]:                      https://javadoc.io/doc/com.leakyabstractions/result-assertj/
 [LATEST_RELEASE]:               https://github.com/leakyabstractions/result-assertj/releases/latest/
 [PRAGVER]:                      https://pragver.github.io/
 [QUALITY_GATE]:                 https://sonarcloud.io/dashboard?id=LeakyAbstractions_result-assertj

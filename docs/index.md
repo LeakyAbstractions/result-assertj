@@ -157,7 +157,7 @@ See the License for the specific language governing permissions and limitations 
 [GRADLE]:                       https://gradle.org/
 [GUILLERMO]:                    https://guillermo.dev/
 [GUILLERMO_IMAGE]:              https://guillermo.dev/assets/images/thumb.png
-[JAVADOC]:                      https://dev.leakyabstractions.com/result-assertj/javadoc/
+[JAVADOC]:                      https://javadoc.io/doc/com.leakyabstractions/result-assertj/
 [MAVEN]:                        https://maven.apache.org/
 [PRAGVER]:                      https://pragver.github.io/
 [RESULT]:                       https://dev.leakyabstractions.com/result/

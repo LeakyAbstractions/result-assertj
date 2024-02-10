@@ -26,14 +26,14 @@ provides snippets for different build tools to declare this dependency.
 You can use _Result_ assertions in your tests via [`assertThat`][ASSERT_THAT]:
 
 ```java
-{% include_relative lib-assertj/src/test/java/example/Example1_Test.java %}
+{% include_relative result-assertj/src/test/java/example/Example1_Test.java %}
 ```
 
 If, for some reason, you cannot statically import static method [`ResultAssertions.assertThat()`][ASSERT_THAT] you can
 use static method [`assertThatResult`][ASSERT_THAT_RESULT] instead:
 
 ```java
-{% include_relative lib-assertj/src/test/java/example/Example2_Test.java %}
+{% include_relative result-assertj/src/test/java/example/Example2_Test.java %}
 ```
 
 

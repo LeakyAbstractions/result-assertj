@@ -1,20 +1,43 @@
+---
+title: Fluent Assertions for Result Objects
+description: Result-AssertJ provides assertions to test Result objects
+image: https://dev.leakyabstractions.com/result/result-magic-ball.png
+---
 
-[![Build Status][BADGE_BUILD_STATUS]][BUILD_STATUS]
-[![Quality Gate Status][BADGE_QUALITY_GATE]][QUALITY_GATE]
-[![Coverage][BADGE_CODE_COVERAGE]][CODE_COVERAGE]
-[![Maven Central][BADGE_ARTIFACTS]][ARTIFACTS]
-[![Latest Release][BADGE_LATEST_RELEASE]][LATEST_RELEASE]
-[![Javadoc][BADGE_JAVADOC]][JAVADOC]
+# Result Assertions
 
-# Fluent Assertions for Result Objects
-
-This library provides fluent assertions (based on [AssertJ][ASSERTJ]) to test [Result objects][RESULT].
+This library provides [fluent assertions][ASSERTJ] to test [Result objects][RESULT].
 
 
-## Getting Started
+## Adding Assertions to Your Build
 
-Please read the [Quick Guide][QUICK_GUIDE] to know how to add this library to your build.
+Artifact coordinates:
 
+- Group ID: `com.leakyabstractions`
+- Artifact ID: `result-assertj`
+- Version: `{{ site.current_version }}`
+
+[Maven Central Repository](https://central.sonatype.com/artifact/com.leakyabstractions/result-lazy/{{ site.current_version }})
+provides snippets for different build tools to declare this dependency.
+
+
+## Asserting Result objects
+
+You can use _Result_ assertions in your tests via [`assertThat`][ASSERT_THAT]:
+
+```java
+{% include_relative result-assertj/src/test/java/example/Example1_Test.java %}
+```
+
+If, for some reason, you cannot statically import static method [`ResultAssertions.assertThat()`][ASSERT_THAT] you can
+use static method [`assertThatResult`][ASSERT_THAT_RESULT] instead:
+
+```java
+{% include_relative result-assertj/src/test/java/example/Example2_Test.java %}
+```
+
+
+# Additional Info
 
 ## Releases
 
@@ -87,23 +110,16 @@ See the License for the specific language governing permissions and limitations 
 
 [ARTIFACTS]:                    https://search.maven.org/artifact/com.leakyabstractions/result-assertj/
 [ASSERTJ]:                      https://assertj.github.io/doc/
+[ASSERT_THAT]:                  https://javadoc.io/static/com.leakyabstractions/result-assertj/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssertions.html#assertThat-com.leakyabstractions.result.api.Result-
+[ASSERT_THAT_RESULT]:           https://javadoc.io/static/com.leakyabstractions/result-assertj/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssert.html#assertThatResult-com.leakyabstractions.result.api.Result-
 [AUTHOR]:                       https://github.com/guillermocalvo/
-[BADGE_ARTIFACTS]:              https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-assertj/badge.json&logo=java&label=maven-central&labelColor=555
-[BADGE_BUILD_STATUS]:           https://github.com/leakyabstractions/result-assertj/workflows/Build/badge.svg
-[BADGE_CODE_COVERAGE]:          https://sonarcloud.io/api/project_badges/measure?project=LeakyAbstractions_result-assertj&metric=coverage
-[BADGE_JAVADOC]:                https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-assertj/badge.json&label=javadoc&color=blue
-[BADGE_LATEST_RELEASE]:         https://img.shields.io/github/release/leakyabstractions/result-assertj.svg?logo=github
-[BADGE_QUALITY_GATE]:           https://sonarcloud.io/api/project_badges/measure?project=LeakyAbstractions_result-assertj&metric=alert_status
-[BUILD_STATUS]:                 https://github.com/LeakyAbstractions/result-assertj/actions?query=workflow%3ABuild
-[CODE_COVERAGE]:                https://sonarcloud.io/component_measures?id=LeakyAbstractions_result-assertj&metric=coverage&view=list
 [CODE_OF_CONDUCT]:              https://dev.leakyabstractions.com/result/CODE_OF_CONDUCT.html
 [CONTRIBUTING]:                 https://dev.leakyabstractions.com/result/CONTRIBUTING.html
+[GRADLE]:                       https://gradle.org/
 [GUILLERMO]:                    https://guillermo.dev/
 [GUILLERMO_IMAGE]:              https://guillermo.dev/assets/images/thumb.png
 [JAVADOC]:                      https://javadoc.io/doc/com.leakyabstractions/result-assertj/
-[LATEST_RELEASE]:               https://github.com/leakyabstractions/result-assertj/releases/latest/
+[MAVEN]:                        https://maven.apache.org/
 [PRAGVER]:                      https://pragver.github.io/
-[QUALITY_GATE]:                 https://sonarcloud.io/dashboard?id=LeakyAbstractions_result-assertj
-[QUICK_GUIDE]:                  https://dev.leakyabstractions.com/result-assertj/
 [RESULT]:                       https://dev.leakyabstractions.com/result/
 [SUPPORT]:                      https://dev.leakyabstractions.com/result/SUPPORT.html

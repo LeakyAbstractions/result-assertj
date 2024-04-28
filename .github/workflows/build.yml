@@ -58,18 +58,6 @@ jobs:
         java-version: ${{ matrix.jdk }}
 
     # ================================
-    # CACHE SONARCLOUD PACKAGES
-    # ================================
-    - name: Cache SonarCloud packages
-      uses: actions/cache@v4
-      with:
-        key: ${{ runner.os }}-sonar
-        path: |
-          ~/.sonar/cache
-        restore-keys: |
-          ${{ runner.os }}-sonar
-
-    # ================================
     # SET UP GRADLE
     # ================================
     - name: Set up Gradle
@@ -97,6 +85,19 @@ jobs:
     # ================================
     - name: Compatibility report
       run: cat ./api-compatibility/build/report.txt >> $GITHUB_STEP_SUMMARY
+
+    # ================================
+    # CACHE SONARCLOUD PACKAGES
+    # ================================
+    - name: Cache SonarCloud packages
+      if: ${{ matrix.jdk == 21 }}
+      uses: actions/cache@v4
+      with:
+        key: ${{ runner.os }}-sonar
+        path: |
+          ~/.sonar/cache
+        restore-keys: |
+          ${{ runner.os }}-sonar
 
     # ================================
     # ANALYZE WITH SONARCLOUD

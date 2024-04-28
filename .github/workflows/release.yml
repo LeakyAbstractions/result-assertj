@@ -41,12 +41,6 @@ jobs:
         build-scan-terms-of-service-agree: yes
 
     # ================================
-    # CREATE RELEASE
-    # ================================
-    - name: Create Release
-      uses: softprops/action-gh-release@v1
-
-    # ================================
     # PUBLISH
     # ================================
     - name: Publish
@@ -59,3 +53,9 @@ jobs:
         ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPE_PASSWORD }}
         ORG_GRADLE_PROJECT_sonatypeStagingProfileId: ${{ secrets.SONATYPE_STAGING_PROFILE_ID }}
       run: ./gradlew publish -Prelease --info --scan
+
+    # ================================
+    # CREATE RELEASE
+    # ================================
+    - name: Create Release
+      uses: softprops/action-gh-release@v2

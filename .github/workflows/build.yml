@@ -26,7 +26,6 @@ jobs:
       is_main:        ${{ github.ref_name == github.event.repository.default_branch }}
       is_develop:     ${{ github.ref_name == 'develop' }}
       is_fork:        ${{ github.event_name == 'pull_request' }}
-      should_analyze: ${{ is_latest_jdk && !is_fork }}
 
     steps:
 
@@ -34,14 +33,14 @@ jobs:
     # SHALLOW CLONE
     # ================================
     - name: Shallow clone
-      if: ${{ !should_analyze }}
+      if: ${{ !env.is_latest_jdk || env.is_fork }}
       uses: actions/checkout@v4
 
     # ================================
     # CHECKOUT
     # ================================
     - name: Checkout git branch
-      if: ${{ should_analyze }}
+      if: ${{ env.is_latest_jdk && !env.is_fork }}
       uses: actions/checkout@v4
       with:
         # Fetch all history for all tags and branches (recommended by SonarQube)
@@ -51,7 +50,7 @@ jobs:
     # VALIDATE GRADLE WRAPPER
     # ================================
     - name: Validate Gradle Wrapper files
-      if: ${{ is_latest_jdk }}
+      if: ${{ env.is_latest_jdk }}
       uses: gradle/actions/wrapper-validation@v3
 
     # ================================
@@ -73,7 +72,7 @@ jobs:
         build-scan-publish: true
         build-scan-terms-of-use-url: "https://gradle.com/help/legal-terms-of-use"
         build-scan-terms-of-use-agree: "yes"
-        cache-read-only: ${{ !is_main && !is_develop }}
+        cache-read-only: ${{ !env.is_main && !env.is_develop }}
 
     # ================================
     # EXPORT GRADLE PROPERTIES
@@ -101,14 +100,14 @@ jobs:
     # COMPATIBILITY REPORT
     # ================================
     - name: Compatibility with version ${{ steps.properties.outputs.previousVersion }}
-      if: ${{ is_latest_jdk }}
+      if: ${{ env.is_latest_jdk }}
       run: cat ./api-compatibility/build/report.txt >> $GITHUB_STEP_SUMMARY
 
     # ================================
     # CACHE SONARCLOUD PACKAGES
     # ================================
     - name: Cache SonarCloud packages
-      if: ${{ should_analyze }}
+      if: ${{ env.is_latest_jdk && !env.is_fork }}
       uses: actions/cache@v4
       with:
         key: ${{ runner.os }}-sonar
@@ -121,7 +120,7 @@ jobs:
     # ANALYZE WITH SONARCLOUD
     # ================================
     - name: Analyze with SonarCloud
-      if: ${{ should_analyze }}
+      if: ${{ env.is_latest_jdk && !env.is_fork }}
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: https://sonarcloud.io
@@ -132,7 +131,7 @@ jobs:
     # PUBLISH SNAPSHOT
     # ================================
     - name: Publish snapshot version ${{ steps.properties.outputs.version }}
-      if: ${{ is_latest_jdk && !is_fork && is_main && endsWith(steps.properties.outputs.version, '-SNAPSHOT') }}
+      if: ${{ env.is_latest_jdk && !env.is_fork && env.is_main && endsWith(steps.properties.outputs.version, '-SNAPSHOT') }}
       env:
         ORG_GRADLE_PROJECT_githubUsername: ${{ secrets.PUBLISH_USERNAME }}
         ORG_GRADLE_PROJECT_githubPassword: ${{ secrets.PUBLISH_PASSWORD }}

@@ -5,7 +5,7 @@ package example;
 import com.leakyabstractions.result.api.Result;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static com.leakyabstractions.result.core.Results.success;
+import static com.leakyabstractions.result.test.Results.success;
 
 /** {% elsif true %}Import result assertions */
 import static com.leakyabstractions.result.assertj.ResultAssert.assertThatResult;

@@ -22,10 +22,10 @@ jobs:
         jdk: [ 11, 17, 21 ]
 
     env:
-      is_latest_jdk:  ${{ matrix.jdk == 21 }}
-      is_main:        ${{ github.ref_name == github.event.repository.default_branch }}
-      is_develop:     ${{ github.ref_name == 'develop' }}
-      is_fork:        ${{ github.event_name == 'pull_request' }}
+      is_latest_jdk:  ${{ matrix.jdk == 21                                          && 'yes' || '' }}
+      is_main:        ${{ github.ref_name == github.event.repository.default_branch && 'yes' || '' }}
+      is_develop:     ${{ github.ref_name == 'develop'                              && 'yes' || '' }}
+      is_fork:        ${{ github.event_name == 'pull_request'                       && 'yes' || '' }}
 
     steps:
 

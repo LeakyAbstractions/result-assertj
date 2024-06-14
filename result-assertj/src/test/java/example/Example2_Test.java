@@ -18,7 +18,7 @@ class Example2_Test {
 
 /** {% elsif true %} Use result assertions */
 @Test
-public void should_pass_too() {
+void should_pass_too() {
   // Given
   final int zero = 0;
   // When

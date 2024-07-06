@@ -113,8 +113,8 @@ See the License for the specific language governing permissions and limitations 
 [ASSERT_THAT]:                  https://javadoc.io/static/com.leakyabstractions/result-assertj/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssertions.html#assertThat-com.leakyabstractions.result.api.Result-
 [ASSERT_THAT_RESULT]:           https://javadoc.io/static/com.leakyabstractions/result-assertj/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssert.html#assertThatResult-com.leakyabstractions.result.api.Result-
 [AUTHOR]:                       https://github.com/guillermocalvo/
-[CODE_OF_CONDUCT]:              https://dev.leakyabstractions.com/result/CODE_OF_CONDUCT.html
-[CONTRIBUTING]:                 https://dev.leakyabstractions.com/result/CONTRIBUTING.html
+[CODE_OF_CONDUCT]:              https://github.com/LeakyAbstractions/.github/blob/main/CODE_OF_CONDUCT.md
+[CONTRIBUTING]:                 https://github.com/LeakyAbstractions/.github/blob/main/CONTRIBUTING.md
 [GRADLE]:                       https://gradle.org/
 [GUILLERMO]:                    https://guillermo.dev/
 [GUILLERMO_IMAGE]:              https://guillermo.dev/assets/images/thumb.png
@@ -122,4 +122,4 @@ See the License for the specific language governing permissions and limitations 
 [MAVEN]:                        https://maven.apache.org/
 [PRAGVER]:                      https://pragver.github.io/
 [RESULT]:                       https://dev.leakyabstractions.com/result/
-[SUPPORT]:                      https://dev.leakyabstractions.com/result/SUPPORT.html
+[SUPPORT]:                      https://github.com/LeakyAbstractions/.github/blob/main/SUPPORT.md

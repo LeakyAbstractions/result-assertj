@@ -96,8 +96,8 @@ See the License for the specific language governing permissions and limitations 
 [BADGE_QUALITY_GATE]:           https://sonarcloud.io/api/project_badges/measure?project=LeakyAbstractions_result-assertj&metric=alert_status
 [BUILD_STATUS]:                 https://github.com/LeakyAbstractions/result-assertj/actions?query=workflow%3ABuild
 [CODE_COVERAGE]:                https://sonarcloud.io/component_measures?id=LeakyAbstractions_result-assertj&metric=coverage&view=list
-[CODE_OF_CONDUCT]:              https://dev.leakyabstractions.com/result/CODE_OF_CONDUCT.html
-[CONTRIBUTING]:                 https://dev.leakyabstractions.com/result/CONTRIBUTING.html
+[CODE_OF_CONDUCT]:              https://github.com/LeakyAbstractions/.github/blob/main/CODE_OF_CONDUCT.md
+[CONTRIBUTING]:                 https://github.com/LeakyAbstractions/.github/blob/main/CONTRIBUTING.md
 [GUILLERMO]:                    https://guillermo.dev/
 [GUILLERMO_IMAGE]:              https://guillermo.dev/assets/images/thumb.png
 [JAVADOC]:                      https://javadoc.io/doc/com.leakyabstractions/result-assertj/
@@ -106,4 +106,4 @@ See the License for the specific language governing permissions and limitations 
 [QUALITY_GATE]:                 https://sonarcloud.io/dashboard?id=LeakyAbstractions_result-assertj
 [QUICK_GUIDE]:                  https://dev.leakyabstractions.com/result-assertj/
 [RESULT]:                       https://dev.leakyabstractions.com/result/
-[SUPPORT]:                      https://dev.leakyabstractions.com/result/SUPPORT.html
+[SUPPORT]:                      https://github.com/LeakyAbstractions/.github/blob/main/SUPPORT.md

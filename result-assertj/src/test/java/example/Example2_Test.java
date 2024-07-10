@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static com.leakyabstractions.result.test.Results.success;
 
-/** {% elsif true %}Import result assertions */
+/** {% elsif true %} Import result assertions */
 import static com.leakyabstractions.result.assertj.ResultAssert.assertThatResult;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -18,7 +18,7 @@ class Example2_Test {
 
 /** {% elsif true %} Use result assertions */
 @Test
-void should_pass_too() {
+void testAssertThatResult() {
   // Given
   final int zero = 0;
   // When

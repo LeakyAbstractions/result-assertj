@@ -19,7 +19,7 @@ package org.assertj.core.api;
 /**
  * Proxy to access package-protected methods in {@code org.assertj.core.api}.
  *
- * @author Guillermo Calvo
+ * @author <a href="https://guillermo.dev/">Guillermo Calvo</a>
  */
 public interface ObjectAssertProxy {
 

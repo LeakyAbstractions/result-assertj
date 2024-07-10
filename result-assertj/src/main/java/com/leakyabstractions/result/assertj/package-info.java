@@ -1,57 +1,17 @@
 /**
- * Provides assertions for {@link com.leakyabstractions.result.api.Result} type.
- * <h2>AssertJ assertions for {@code Result}</h2>
+ * Provides AssertJ assertions for {@link com.leakyabstractions.result.api.Result} objects.
  * <p>
- * If you think some assertion is missing, please <a href="https://github.com/LeakyAbstractions/result/issues">create an
- * issue</a> or even better <a href="https://dev.leakyabstractions.com/result/CONTRIBUTING.html">contribute</a>!
+ * <img src="https://dev.leakyabstractions.com/result-api/result.svg" alt="Result Library">
+ * <h2>Fluent Assertions for Result</h2>
  * <p>
- * Result Library for Java is hosted on <a href="https://github.com/LeakyAbstractions/result">GitHub</a>.
- * <p>
- * To quickly start using Result assertions, follow these steps:
- * <ol>
- * <li>Statically import {@code com.leakyabstractions.result.assertj.ResultAssertions.assertThat}.
- * <li>Pass the result under test as the sole {@code assertThat} parameter.
- * <li>Use code completion to discover assertions.
- * </ol>
- * <h3>Statically import {@code assertThat}</h3>
+ * You can use fluent assertions for Result objects in your unit tests to enhance the readability and expressiveness of
+ * your tests. These assertions are based on <a href="https://assertj.github.io/">AssertJ</a>, an open-source Java
+ * library that offers a fluent API for writing assertions in test cases.
  *
- * <pre class="row-color rowColor">
- * <code>&nbsp;
- * import static com.leakyabstractions.result.assertj.ResultAssertions.assertThat;
- * </code>
- * </pre>
- *
- * <h3>Pass the result under test as the sole {@code assertThat} parameter</h3>
- *
- * <pre class="row-color rowColor">
- * <code>&nbsp;
- * assertThat(result)
- * </code>
- * </pre>
- *
- * <h3>Use code completion to discover assertions</h3>
- * <p>
- * Use your preferred IDE code completion after
- * {@link ResultAssertions#assertThat(com.leakyabstractions.result.api.Result) assertThat} to discover and call
- * assertions.
- *
- * <pre class="row-color rowColor">
- * <code>&nbsp;
- * &amp;Test
- * public void should_pass() {
- *     // Given
- *     final int number = someMethodReturningInt();
- *     // When
- *     final Result&lt;String, Integer&gt; result = someMethodReturningResult(number);
- *     // Then
- *     assertThat(number).isZero();
- *     assertThat(result).hasSuccess("OK");
- * }
- * </code>
- * </pre>
- *
- * @author Guillermo Calvo
- * @see ResultAssertions
+ * @author <a href="https://guillermo.dev/">Guillermo Calvo</a>
+ * @see <a href="https://result.leakyabstractions.com/add-ons/assertj">Quick guide</a>
+ * @see <a href="https://github.com/LeakyAbstractions/result-assertj/">Source code</a>
+ * @see com.leakyabstractions.result.assertj.ResultAssertions#assertThat(com.leakyabstractions.result.api.Result)
  * @see com.leakyabstractions.result.api.Result
  */
 

@@ -45,7 +45,7 @@ import com.leakyabstractions.result.api.Result;
  * @param <SELF> the "self" type of this assertion class.
  * @param <S> type of the success value contained in the {@link Result}.
  * @param <F> type of the failure value contained in the {@link Result}.
- * @author Guillermo Calvo
+ * @author <a href="https://guillermo.dev/">Guillermo Calvo</a>
  */
 @SuppressWarnings("java:S119") // Type parameter names should comply with a naming convention
 abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F>, S, F>

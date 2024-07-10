@@ -31,7 +31,7 @@ import com.leakyabstractions.result.api.Result;
 /**
  * {@link InstanceOfAssertFactory} instances for {@link Result}.
  *
- * @author Guillermo Calvo
+ * @author <a href="https://guillermo.dev/">Guillermo Calvo</a>
  * @see InstanceOfAssertFactories
  * @see Assert#asInstanceOf(InstanceOfAssertFactory)
  * @see AbstractObjectAssert#extracting(String, InstanceOfAssertFactory)

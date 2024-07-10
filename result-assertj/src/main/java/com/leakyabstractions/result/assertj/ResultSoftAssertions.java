@@ -23,7 +23,7 @@ import com.leakyabstractions.result.api.Result;
 /**
  * Soft assertions for {@link Result}.
  *
- * @author Guillermo Calvo
+ * @author <a href="https://guillermo.dev/">Guillermo Calvo</a>
  */
 public class ResultSoftAssertions extends SoftAssertions {
 

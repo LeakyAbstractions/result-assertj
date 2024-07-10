@@ -23,7 +23,7 @@ import com.leakyabstractions.result.api.Result;
 /**
  * Build error message when a {@link Result} should be a success or a failure.
  *
- * @author Guillermo Calvo
+ * @author <a href="https://guillermo.dev/">Guillermo Calvo</a>
  */
 class ResultShouldBe extends BasicErrorMessageFactory {
 

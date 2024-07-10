@@ -6,7 +6,14 @@ image: https://dev.leakyabstractions.com/result/result-magic-ball.png
 
 # Result Assertions
 
-This library provides [fluent assertions][ASSERTJ] to test [Result objects][RESULT].
+This library provides fluent assertions to test [Result objects][RESULT].
+
+Fluent assertions enhance the readability and expressiveness of your unit tests. These assertions are based on
+[AssertJ][ASSERTJ], an open-source Java library that offers a fluent API for writing assertions in test cases.
+
+> [AssertJ][ASSERTJ] features a comprehensive and intuitive set of strongly-typed assertions for unit testing. It is a
+> popular choice among Java developers due to its effective features and compatibility with various testing frameworks
+> like [JUnit][JUNIT] and [TestNG][TESTNG].
 
 
 ## Adding Assertions to Your Build
@@ -17,24 +24,25 @@ Artifact coordinates:
 - Artifact ID: `result-assertj`
 - Version: `{{ site.current_version }}`
 
-[Maven Central Repository](https://central.sonatype.com/artifact/com.leakyabstractions/result-lazy/{{ site.current_version }})
-provides snippets for different build tools to declare this dependency.
+[Maven Central Repository][ARTIFACTS] provides snippets for different build tools to declare this dependency.
 
 
 ## Asserting Result objects
 
-You can use _Result_ assertions in your tests via [`assertThat`][ASSERT_THAT]:
+You can use [`ResultAssertions::assertThat`][ASSERT_THAT] in your tests to create fluent assertions for result objects.
 
 ```java
 {% include_relative result-assertj/src/test/java/example/Example1_Test.java %}
 ```
 
-If, for some reason, you cannot statically import static method [`ResultAssertions.assertThat()`][ASSERT_THAT] you can
-use static method [`assertThatResult`][ASSERT_THAT_RESULT] instead:
+If, for any reason, you cannot statically import `assertThat`, you can use
+[`ResultAssert::assertThatResult`][ASSERT_THAT_RESULT] instead.
 
 ```java
 {% include_relative result-assertj/src/test/java/example/Example2_Test.java %}
 ```
+
+The full source code for the examples is [available on GitHub][SOURCE_CODE].
 
 
 # Additional Info
@@ -108,18 +116,21 @@ See the License for the specific language governing permissions and limitations 
 - **Warranty**: This library is provided without any warranty.
 
 
-[ARTIFACTS]:                    https://search.maven.org/artifact/com.leakyabstractions/result-assertj/
+[ARTIFACTS]:                    https://central.sonatype.com/artifact/com.leakyabstractions/result-assertj/
 [ASSERTJ]:                      https://assertj.github.io/doc/
-[ASSERT_THAT]:                  https://javadoc.io/static/com.leakyabstractions/result-assertj/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssertions.html#assertThat-com.leakyabstractions.result.api.Result-
-[ASSERT_THAT_RESULT]:           https://javadoc.io/static/com.leakyabstractions/result-assertj/{{ site.current_version }}/com/leakyabstractions/result/assertj/ResultAssert.html#assertThatResult-com.leakyabstractions.result.api.Result-
+[ASSERT_THAT]:                  https://javadoc.io/doc/com.leakyabstractions/result-assertj/latest/com/leakyabstractions/result/assertj/ResultAssertions.html#assertThat-com.leakyabstractions.result.api.Result-
+[ASSERT_THAT_RESULT]:           https://javadoc.io/doc/com.leakyabstractions/result-assertj/latest/com/leakyabstractions/result/assertj/ResultAssert.html#assertThatResult-com.leakyabstractions.result.api.Result-
 [AUTHOR]:                       https://github.com/guillermocalvo/
-[CODE_OF_CONDUCT]:              https://dev.leakyabstractions.com/result/CODE_OF_CONDUCT.html
-[CONTRIBUTING]:                 https://dev.leakyabstractions.com/result/CONTRIBUTING.html
+[CODE_OF_CONDUCT]:              https://github.com/LeakyAbstractions/.github/blob/main/CODE_OF_CONDUCT.md
+[CONTRIBUTING]:                 https://github.com/LeakyAbstractions/.github/blob/main/CONTRIBUTING.md
 [GRADLE]:                       https://gradle.org/
 [GUILLERMO]:                    https://guillermo.dev/
 [GUILLERMO_IMAGE]:              https://guillermo.dev/assets/images/thumb.png
 [JAVADOC]:                      https://javadoc.io/doc/com.leakyabstractions/result-assertj/
+[JUNIT]:                        https://junit.org/
 [MAVEN]:                        https://maven.apache.org/
 [PRAGVER]:                      https://pragver.github.io/
-[RESULT]:                       https://dev.leakyabstractions.com/result/
-[SUPPORT]:                      https://dev.leakyabstractions.com/result/SUPPORT.html
+[RESULT]:                       https://result.leakyabstractions.com/
+[SOURCE_CODE]:                  https://github.com/LeakyAbstractions/result-assertj/tree/main/result-assertj/src/test/java/example
+[SUPPORT]:                      https://github.com/LeakyAbstractions/.github/blob/main/SUPPORT.md
+[TESTNG]:                       https://testng.org/

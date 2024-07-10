@@ -23,7 +23,7 @@ import com.leakyabstractions.result.api.Result;
  *
  * @param <S> type of the success value contained in the {@link Result}.
  * @param <F> type of the failure value contained in the {@link Result}.
- * @author Guillermo Calvo
+ * @author <a href="https://guillermo.dev/">Guillermo Calvo</a>
  */
 public class ResultAssert<S, F> extends AbstractResultAssert<ResultAssert<S, F>, S, F> {
 

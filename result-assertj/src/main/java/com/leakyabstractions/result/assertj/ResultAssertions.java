@@ -21,9 +21,9 @@ import org.assertj.core.api.Assertions;
 import com.leakyabstractions.result.api.Result;
 
 /**
- * Entry point for {@link Result} assertions and AssertJ ones.
+ * Entry point for {@link Result} assertions.
  *
- * @author Guillermo Calvo
+ * @author <a href="https://guillermo.dev/">Guillermo Calvo</a>
  */
 public class ResultAssertions extends Assertions {
 

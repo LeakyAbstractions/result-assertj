@@ -1,5 +1,5 @@
 /**
- * Provides fluent assertions for {@link com.leakyabstractions.result.api.Result} objects.
+ * Provides fluent assertions for {@link com.leakyabstractions.result.api.Result Result} objects.
  * <p>
  * <img src="https://dev.leakyabstractions.com/result-api/result.svg" alt="Result Library">
  * <h2>Fluent Assertions for Result</h2>

@@ -3,8 +3,8 @@
 [![Quality Gate Status][BADGE_QUALITY_GATE]][QUALITY_GATE]
 [![Coverage][BADGE_CODE_COVERAGE]][CODE_COVERAGE]
 [![Maven Central][BADGE_ARTIFACTS]][ARTIFACTS]
-[![Latest Release][BADGE_LATEST_RELEASE]][LATEST_RELEASE]
 [![Javadoc][BADGE_JAVADOC]][JAVADOC]
+[![Free ebook][BADGE_GUIDE_BOOK]][GUIDE_BOOK]
 
 # Fluent Assertions for Result Objects
 
@@ -14,6 +14,8 @@ This library provides fluent assertions (based on [AssertJ][ASSERTJ]) to test [R
 ## Getting Started
 
 Please read the [Quick Guide][QUICK_GUIDE] to know how to add this library to your build.
+
+Also available as an ebook in multiple formats. [Download your free copy now!][GUIDE_BOOK]
 
 
 ## Releases
@@ -88,20 +90,20 @@ See the License for the specific language governing permissions and limitations 
 [ARTIFACTS]:                    https://central.sonatype.com/artifact/com.leakyabstractions/result-assertj/
 [ASSERTJ]:                      https://assertj.github.io/doc/
 [AUTHOR]:                       https://github.com/guillermocalvo/
-[BADGE_ARTIFACTS]:              https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-assertj/badge.json&logo=java&label=maven-central&labelColor=555
+[BADGE_ARTIFACTS]:              https://img.shields.io/maven-central/v/com.leakyabstractions/result-assertj
 [BADGE_BUILD_STATUS]:           https://github.com/leakyabstractions/result-assertj/workflows/Build/badge.svg
 [BADGE_CODE_COVERAGE]:          https://sonarcloud.io/api/project_badges/measure?project=LeakyAbstractions_result-assertj&metric=coverage
-[BADGE_JAVADOC]:                https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-assertj/badge.json&label=javadoc&color=blue
-[BADGE_LATEST_RELEASE]:         https://img.shields.io/github/release/leakyabstractions/result-assertj.svg?logo=github
+[BADGE_GUIDE_BOOK]:             https://img.shields.io/badge/Free_book-444?logo=leanpub
+[BADGE_JAVADOC]:                https://javadoc.io/badge2/com.leakyabstractions/result-assertj/javadoc.svg
 [BADGE_QUALITY_GATE]:           https://sonarcloud.io/api/project_badges/measure?project=LeakyAbstractions_result-assertj&metric=alert_status
 [BUILD_STATUS]:                 https://github.com/LeakyAbstractions/result-assertj/actions?query=workflow%3ABuild
 [CODE_COVERAGE]:                https://sonarcloud.io/component_measures?id=LeakyAbstractions_result-assertj&metric=coverage&view=list
 [CODE_OF_CONDUCT]:              https://github.com/LeakyAbstractions/.github/blob/main/CODE_OF_CONDUCT.md
 [CONTRIBUTING]:                 https://github.com/LeakyAbstractions/.github/blob/main/CONTRIBUTING.md
+[GUIDE_BOOK]:                   https://leanpub.com/result/
 [GUILLERMO]:                    https://guillermo.dev/
 [GUILLERMO_IMAGE]:              https://guillermo.dev/assets/images/thumb.png
 [JAVADOC]:                      https://javadoc.io/doc/com.leakyabstractions/result-assertj/
-[LATEST_RELEASE]:               https://github.com/leakyabstractions/result-assertj/releases/latest/
 [PRAGVER]:                      https://pragver.github.io/
 [QUALITY_GATE]:                 https://sonarcloud.io/dashboard?id=LeakyAbstractions_result-assertj
 [QUICK_GUIDE]:                  https://result.leakyabstractions.com/add-ons/assertj

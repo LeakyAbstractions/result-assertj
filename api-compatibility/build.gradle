@@ -26,6 +26,8 @@ tasks.register("check", me.champeau.gradle.japicmp.JapicmpTask) {
     final textReport  = layout.buildDirectory.file('report.txt').get().asFile
     final htmlReport  = layout.buildDirectory.file('report.html').get().asFile
     final mdReport    = layout.buildDirectory.file('report.md').get().asFile
+    addNewArchives(configurations.current)
+    addOldArchives(configurations.previous)
     newClasspath.from(configurations.current)
     oldClasspath.from(configurations.previous)
     semverOutputFile            = semverReport

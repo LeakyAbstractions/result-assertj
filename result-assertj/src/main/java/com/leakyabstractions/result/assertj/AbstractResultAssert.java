@@ -32,7 +32,6 @@ import org.assertj.core.api.Condition;
 import org.assertj.core.api.InstanceOfAssertFactory;
 import org.assertj.core.api.ObjectAssert;
 import org.assertj.core.api.ObjectAssertProxy;
-import org.assertj.core.api.WritableAssertionInfo;
 import org.assertj.core.internal.Conditions;
 import org.assertj.core.internal.StandardComparisonStrategy;
 import org.assertj.core.util.CheckReturnValue;
@@ -241,7 +240,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      */
     public SELF hasSuccessSatisfying(Condition<? super S> condition) {
         final S value = this.assertHasSuccess();
-        Conditions.instance().assertIs(this.info(), value, condition);
+        Conditions.instance().assertIs(this.getWritableAssertionInfo(), value, condition);
         return myself;
     }
 
@@ -538,7 +537,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
      */
     public SELF hasFailureSatisfying(Condition<? super F> condition) {
         final F value = this.assertHasFailure();
-        Conditions.instance().assertIs(this.info(), value, condition);
+        Conditions.instance().assertIs(this.getWritableAssertionInfo(), value, condition);
         return myself;
     }
 
@@ -664,17 +663,5 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
         return this.actual()
                 .getFailure()
                 .orElseThrow(() -> this.assertionError(shouldBeFailure(this.actual())));
-    }
-
-    // Class members annotated with "@VisibleForTesting" should not be accessed from production code
-
-    @SuppressWarnings("java:S5803")
-    private Result<S, F> actual() {
-        return this.actual;
-    }
-
-    @SuppressWarnings("java:S5803")
-    private WritableAssertionInfo info() {
-        return this.info;
     }
 }

@@ -9,7 +9,9 @@ and this project adheres to [Pragmatic Versioning](https://pragver.github.io/spe
 
 ## [Unreleased]
 
-No unreleased changes.
+### Changed
+
+- Bump **assertj-core** from from 3.27.0 to 3.27.3.
 
 
 ## [1.0.1.0]

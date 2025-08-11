@@ -26,6 +26,7 @@ import static org.assertj.core.util.Preconditions.checkArgument;
 
 import java.util.function.Consumer;
 
+import org.assertj.core.annotation.CheckReturnValue;
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.Condition;
@@ -34,7 +35,6 @@ import org.assertj.core.api.ObjectAssert;
 import org.assertj.core.api.ObjectAssertProxy;
 import org.assertj.core.internal.Conditions;
 import org.assertj.core.internal.StandardComparisonStrategy;
-import org.assertj.core.util.CheckReturnValue;
 
 import com.leakyabstractions.result.api.Result;
 

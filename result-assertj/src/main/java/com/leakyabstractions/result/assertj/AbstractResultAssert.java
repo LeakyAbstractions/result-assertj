@@ -312,7 +312,7 @@ abstract class AbstractResultAssert<SELF extends AbstractResultAssert<SELF, S, F
     }
 
     /**
-     * Verifies that the actual {@link Result} is a successful result and returns an new assertion instance to chain
+     * Verifies that the actual {@link Result} is a successful result and returns a new assertion instance to chain
      * assertions on its success value.
      * <p>
      * The {@code assertFactory} parameter allows to specify an {@link InstanceOfAssertFactory}, which is used to get

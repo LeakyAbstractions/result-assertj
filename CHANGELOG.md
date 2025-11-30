@@ -14,6 +14,10 @@ and this project adheres to [Pragmatic Versioning](https://pragver.github.io/spe
 - Bump **assertj-core** from from 3.27.3 to 3.27.6.
 - Bump **result-api** from 1.0.0.0 to 1.0.1.0.
 
+### Added
+
+- Add automatic module name `com.leakyabstractions.result.assertj`.
+
 
 ## [1.0.1.1]
 

@@ -13,6 +13,8 @@ and this project adheres to [Pragmatic Versioning](https://pragver.github.io/spe
 
 - Bump **assertj-core** from from 3.27.3 to 3.27.6.
 - Bump **result-api** from 1.0.0.0 to 1.0.1.0.
+- Constructor for `ResultAssertions` has been made `protected`.
+- Constructor for `ResultSoftAssertions` has been made `protected`.
 
 ### Added
 

@@ -7,6 +7,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Pragmatic Versioning](https://pragver.github.io/spec/1.0.0.0.html).
 
 
+## [Unreleased]
+
+### Changed
+
+- Bump **assertj-core** from from 3.27.3 to 3.27.6.
+- Bump **result-api** from 1.0.0.0 to 1.0.1.0.
+- Constructor for `ResultAssertions` has been made `protected`.
+- Constructor for `ResultSoftAssertions` has been made `protected`.
+
+### Added
+
+- Add automatic module name `com.leakyabstractions.result.assertj`.
+
+
 ## [1.0.1.1]
 
 ### Changed
@@ -31,6 +45,7 @@ and this project adheres to [Pragmatic Versioning](https://pragver.github.io/spe
 - Interface `com.leakyabstractions.result.assertj.InstanceOfResultAssertFactories`.
 
 
+[Unreleased]: https://github.com/LeakyAbstractions/result-assertj/compare/main...develop
 [1.0.0.0]: https://github.com/LeakyAbstractions/result-assertj/releases/tag/1.0.0.0
 [1.0.1.0]: https://github.com/LeakyAbstractions/result-assertj/releases/tag/1.0.1.0
 [1.0.1.1]: https://github.com/LeakyAbstractions/result-assertj/releases/tag/1.0.1.1

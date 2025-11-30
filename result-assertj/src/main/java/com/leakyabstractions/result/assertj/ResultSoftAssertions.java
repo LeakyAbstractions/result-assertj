@@ -27,6 +27,11 @@ import com.leakyabstractions.result.api.Result;
  */
 public class ResultSoftAssertions extends SoftAssertions {
 
+    /** Creates a new instance. */
+    protected ResultSoftAssertions() {
+        /* do nothing */
+    }
+
     /**
      * Create soft assertion for {@link Result}.
      *

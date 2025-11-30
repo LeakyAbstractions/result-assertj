@@ -27,6 +27,11 @@ import com.leakyabstractions.result.api.Result;
  */
 public class ResultAssertions extends Assertions {
 
+    /** Creates a new instance. */
+    protected ResultAssertions() {
+        /* do nothing */
+    }
+
     /**
      * Create assertion for {@link Result}.
      *

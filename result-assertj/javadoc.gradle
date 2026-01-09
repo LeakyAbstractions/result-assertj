@@ -4,16 +4,7 @@ javadoc {
         title = project.artifactName
         header "${project.artifactName} ${rootProject.version}"
         author true
-        links 'https://docs.oracle.com/javase/8/docs/api/'
-        links 'https://javadoc.io/doc/com.leakyabstractions/result-api/latest/'
-    }
-    configure(options) {
-        // https://javadoc.io/doc/org.assertj/assertj-core/latest/package-list fails with 403
-        linksOffline 'https://javadoc.io/doc/org.assertj/assertj-core/latest/', "${rootProject.projectDir}/gradle/javadoc/assertj"
-        tags(
-                'apiNote:a:API Note:',
-                'implNote:a:Impl Note:',
-                'implSpec:a:Impl Spec:'
-                )
+        links 'https://javadoc.io/doc/com.leakyabstractions/result-api/' + libs.versions.result.api.get()
+        links 'https://javadoc.io/doc/org.assertj/assertj-core/' + libs.versions.assertj.get()
     }
 }

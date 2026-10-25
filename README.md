@@ -91,7 +91,7 @@ See the License for the specific language governing permissions and limitations 
 [ASSERTJ]:                      https://assertj.github.io/doc/
 [AUTHOR]:                       https://github.com/guillermocalvo/
 [BADGE_ARTIFACTS]:              https://img.shields.io/maven-central/v/com.leakyabstractions/result-assertj
-[BADGE_BUILD_STATUS]:           https://github.com/leakyabstractions/result-assertj/workflows/Build/badge.svg
+[BADGE_BUILD_STATUS]:           https://github.com/leakyabstractions/result-assertj/workflows/Build/badge.svg?branch=develop
 [BADGE_CODE_COVERAGE]:          https://sonarcloud.io/api/project_badges/measure?project=LeakyAbstractions_result-assertj&metric=coverage
 [BADGE_GUIDE_BOOK]:             https://img.shields.io/badge/Free_book-444?logo=leanpub
 [BADGE_JAVADOC]:                https://javadoc.io/badge2/com.leakyabstractions/result-assertj/javadoc.svg
